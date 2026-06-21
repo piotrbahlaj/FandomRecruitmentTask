@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import fandom.piotrbahlaj.project.core.utilities.Constants
 import fandom.piotrbahlaj.project.features.images.presentation.ImagesScreen
 import fandom.piotrbahlaj.project.features.images.presentation.ImagesViewModel
 import fandom.piotrbahlaj.project.features.titles.presentation.TitlesScreen
@@ -23,19 +24,19 @@ fun HomeWrapper(
             Column {
                 TopAppBar(
                     title = {
-                        Text(if (selectedTab == 0) "Titles" else "Images")
+                        Text(if (selectedTab == 0) Constants.Title else Constants.Images)
                     }
                 )
                 PrimaryTabRow(selectedTabIndex = selectedTab) {
                     Tab(
                         selected = selectedTab == 0,
                         onClick = { selectedTab = 0 },
-                        text = { Text("Titles") }
+                        text = { Text(Constants.Title) }
                     )
                     Tab(
                         selected = selectedTab == 1,
                         onClick = { selectedTab = 1 },
-                        text = { Text("Images") }
+                        text = { Text(Constants.Images) }
                     )
                 }
             }

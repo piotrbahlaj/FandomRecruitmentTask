@@ -13,6 +13,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import fandom.piotrbahlaj.project.core.utilities.Constants
 import fandom.piotrbahlaj.project.features.titles.presentation.components.TitleListItem
 
 @Composable
@@ -30,7 +31,7 @@ fun TitlesScreen(
                 modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center
             ) {
-                Text("Loading...")
+                Text(Constants.Loading)
             }
         }
 
@@ -39,7 +40,7 @@ fun TitlesScreen(
                 modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center
             ) {
-                Text("Error: ${state.value.error}")
+                Text("${Constants.Error}: ${state.value.error}")
             }
         }
 

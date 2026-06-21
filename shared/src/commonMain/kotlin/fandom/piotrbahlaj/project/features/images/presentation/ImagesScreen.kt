@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
+import fandom.piotrbahlaj.project.core.utilities.Constants
 
 
 @Composable
@@ -30,7 +31,7 @@ fun ImagesScreen(
                 modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center
             ) {
-                Text("Loading...")
+                Text(Constants.Loading)
             }
         }
 
@@ -39,7 +40,7 @@ fun ImagesScreen(
                 modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center
             ) {
-                Text("Error: ${state.value.error}")
+                Text("${Constants.Error}: ${state.value.error}")
             }
         }
 
