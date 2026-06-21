@@ -10,7 +10,7 @@ class TitlesRepository(
     suspend fun getTitles(): NetworkResult<List<Title>> {
         return try {
             NetworkResult.Success(service.getTitles())
-        } catch (e: Exception) {
+        } catch (e: Throwable) {
             NetworkResult.Failure(e)
         }
     }
