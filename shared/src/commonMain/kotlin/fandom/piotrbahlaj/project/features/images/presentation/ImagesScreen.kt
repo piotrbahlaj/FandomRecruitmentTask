@@ -23,7 +23,7 @@ fun ImagesScreen(
     LaunchedEffect(Unit) {
         viewModel.loadImages()
     }
-    println("STATE: ${state.value}")
+
     when {
         state.value.isLoading -> {
             Text("Loading...")
