@@ -1,8 +1,8 @@
-package fandom.piotrbahlaj.project.core.models
+package fandom.piotrbahlaj.project.features.images.data.models
 
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class ImageDto(
+data class Image(
     val imageUrl: String,
 )

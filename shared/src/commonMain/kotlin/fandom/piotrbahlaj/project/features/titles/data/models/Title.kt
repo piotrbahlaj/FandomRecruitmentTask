@@ -1,9 +1,9 @@
-package fandom.piotrbahlaj.project.core.models
+package fandom.piotrbahlaj.project.features.titles.data.models
 
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class TitleDto(
+data class Title(
     val title: String,
     val communityName: String,
 )
