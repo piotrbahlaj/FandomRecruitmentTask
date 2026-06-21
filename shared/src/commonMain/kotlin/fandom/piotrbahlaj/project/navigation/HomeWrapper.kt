@@ -21,7 +21,11 @@ fun HomeWrapper(
     Scaffold(
         topBar = {
             Column {
-                TopAppBar(title = { Text(if (selectedTab == 0) "Titles" else "Images") })
+                TopAppBar(
+                    title = {
+                        Text(if (selectedTab == 0) "Titles" else "Images")
+                    }
+                )
                 PrimaryTabRow(selectedTabIndex = selectedTab) {
                     Tab(
                         selected = selectedTab == 0,
@@ -37,7 +41,9 @@ fun HomeWrapper(
             }
         }
     ) { innerPadding ->
-        Box(modifier = Modifier.padding(innerPadding)) {
+        Box(
+            modifier = Modifier.padding(innerPadding)
+        ) {
             when (selectedTab) {
                 0 -> TitlesScreen(viewModel = titlesViewModel)
                 1 -> ImagesScreen(viewModel = imagesViewModel)
