@@ -1,8 +1,8 @@
 package fandom.piotrbahlaj.project.core.network
 
-import io.ktor.client.HttpClient
+import io.ktor.client.*
 
 class ApiClient(
-    private val client: HttpClient,
-    private val baseUrl: String
+    val client: HttpClient,
+    val baseUrl: String
 )
