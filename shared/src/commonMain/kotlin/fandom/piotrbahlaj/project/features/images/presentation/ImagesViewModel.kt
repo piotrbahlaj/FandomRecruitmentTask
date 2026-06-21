@@ -20,14 +20,15 @@ class ImagesViewModel(
 
             when (val result = imagesRepository.getImages()) {
                 is NetworkResult.Success -> {
-                    _state.value = ImagesUiState(
+                    _state.value = _state.value.copy(
                         isLoading = false,
-                        images = result.data
+                        images = result.data,
+                        error = null
                     )
                 }
 
                 is NetworkResult.Failure -> {
-                    _state.value = ImagesUiState(
+                    _state.value = _state.value.copy(
                         isLoading = false,
                         error = result.exception.message
                     )

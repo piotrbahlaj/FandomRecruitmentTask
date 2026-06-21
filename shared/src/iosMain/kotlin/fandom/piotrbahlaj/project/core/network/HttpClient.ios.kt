@@ -1,8 +1,19 @@
 package fandom.piotrbahlaj.project.core.network
 
-import io.ktor.client.HttpClient
-import io.ktor.client.engine.darwin.Darwin
+import io.ktor.client.*
+import io.ktor.client.engine.darwin.*
+import io.ktor.client.plugins.contentnegotiation.*
+import io.ktor.serialization.kotlinx.json.*
+import kotlinx.serialization.json.Json
 
 actual fun createHttpClient(): HttpClient {
-    return HttpClient(Darwin)
+    return HttpClient(Darwin) {
+        install(ContentNegotiation) {
+            json(
+                Json {
+                    ignoreUnknownKeys = true
+                }
+            )
+        }
+    }
 }
