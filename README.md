@@ -1,31 +1,31 @@
-This is a Kotlin Multiplatform project targeting Android, iOS.
+# Fandom Recruitment Task
 
-* [/iosApp](./iosApp/iosApp) contains an iOS application. Even if you’re sharing your UI with Compose Multiplatform,
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+This project is a recruitment task for **Fandom**, built using **Kotlin Multiplatform** and **Compose Multiplatform**,
+targeting both **Android** and **iOS** from a shared codebase.
 
-* [/shared](./shared/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./shared/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./shared/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./shared/src/jvmMain/kotlin)
-    folder is the appropriate location.
+## About the App
 
-### Running the apps
+The app consumes a public API and displays trending articles data across two tabs:
 
-Use the run configurations provided by the run widget in your IDE's toolbar. You can also use these commands and options:
+- **Titles** — a scrollable list of titles, each showing the title name and its associated community (wiki) name.
+- **Images** — a two-column grid of images.
 
-- Android app: `./gradlew :androidApp:assembleDebug`
-- iOS app: open the [/iosApp](./iosApp) directory in Xcode and run it from there.
+The project follows **Clean Architecture** principles, separated into `data`, `domain`, and `presentation` layers per
+feature, with a `core` module for shared infrastructure (networking, dependency injection, configuration, and
+utilities).
 
-### Running tests
+## Tech Stack
 
-Use the run button in your IDE's editor gutter, or run tests using Gradle tasks:
+- Kotlin Multiplatform
+- Compose Multiplatform
+- Ktor (networking — OkHttp engine on Android, Darwin engine on iOS)
+- kotlinx.serialization (JSON parsing)
+- Coil 3 (image loading)
+- AndroidX ViewModel + StateFlow (state management)
 
-- Android tests: `./gradlew :shared:testAndroidHostTest`
-- iOS tests: `./gradlew :shared:iosSimulatorArm64Test`
+## Screenshots
 
----
+| Titles                                         | Images                                         |
+|------------------------------------------------|------------------------------------------------|
+| ![Titles screen](screenshots/TitlesScreen.png) | ![Images screen](screenshots/ImagesScreen.png) |
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
