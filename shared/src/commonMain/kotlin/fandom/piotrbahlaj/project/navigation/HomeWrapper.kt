@@ -29,14 +29,14 @@ fun HomeWrapper(
             Column {
                 TopAppBar(
                     title = {
-                        Text(if (selectedTab == 0) Constants.Title else Constants.Images)
+                        Text(if (selectedTab == 0) Constants.Titles else Constants.Images)
                     }
                 )
                 PrimaryTabRow(selectedTabIndex = selectedTab) {
                     Tab(
                         selected = selectedTab == 0,
                         onClick = { selectedTab = 0 },
-                        text = { Text(Constants.Title) }
+                        text = { Text(Constants.Titles) }
                     )
                     Tab(
                         selected = selectedTab == 1,
