@@ -10,7 +10,7 @@ class ImagesRepository(
     suspend fun getImages(): NetworkResult<List<Image>> {
         return try {
             NetworkResult.Success(service.getImages())
-        } catch (e: Throwable) {
+        } catch (e: Exception) {
             NetworkResult.Failure(e)
         }
     }

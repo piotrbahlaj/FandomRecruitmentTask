@@ -47,7 +47,7 @@ fun TitlesScreen(
         else -> {
             LazyColumn(
                 modifier = Modifier.fillMaxSize(),
-                contentPadding = PaddingValues(12.dp),
+                contentPadding = PaddingValues(12.dp)
             ) {
                 items(state.value.titles) { title ->
                     TitleListItem(title = title)

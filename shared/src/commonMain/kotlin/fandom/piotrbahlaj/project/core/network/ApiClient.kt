@@ -5,7 +5,7 @@ import io.ktor.client.call.*
 import io.ktor.client.request.*
 
 class ApiClient(
-    val client: HttpClient,
+    @PublishedApi internal val client: HttpClient,
     val baseUrl: String
 ) {
 

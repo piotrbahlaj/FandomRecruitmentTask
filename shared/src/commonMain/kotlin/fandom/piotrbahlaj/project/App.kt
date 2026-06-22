@@ -14,6 +14,9 @@ fun App() {
     setSingletonImageLoaderFactory { context -> createImageLoader(context) }
 
     MaterialTheme {
-        HomeWrapper(ServiceLocator.titlesViewModel, ServiceLocator.imagesViewModel)
+        HomeWrapper(
+            titlesViewModel = ServiceLocator.titlesViewModel,
+            imagesViewModel = ServiceLocator.imagesViewModel
+        )
     }
 }
