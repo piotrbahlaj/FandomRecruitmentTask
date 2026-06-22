@@ -16,7 +16,7 @@ class TitlesViewModel(
 
     fun loadTitles() {
         viewModelScope.launch {
-            _state.value = _state.value.copy(isLoading = true)
+            _state.value = _state.value.copy(isLoading = true, error = null)
 
             when (val result = titlesRepository.getTitles()) {
                 is NetworkResult.Success -> {
